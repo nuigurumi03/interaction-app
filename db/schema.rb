@@ -14,7 +14,6 @@ ActiveRecord::Schema.define(version: 2020_01_20_004948) do
 
   create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id"
-    t.string "avater"
     t.integer "birthyear", null: false
     t.integer "birthmonth", null: false
     t.integer "birthday", null: false
@@ -25,15 +24,9 @@ ActiveRecord::Schema.define(version: 2020_01_20_004948) do
     t.string "postal_code", null: false
     t.string "prefecture", null: false
     t.string "city", null: false
-    t.string "address", null: false
-    t.string "building"
-    t.integer "tel"
-    t.string "post_family_name", null: false
-    t.string "post_personal_name", null: false
-    t.string "post_family_name_kana", null: false
-    t.string "post_personal_name_kana", null: false
+    t.string "tel", null: false
     t.string "house_code", null: false
-    t.string "bulid_name"
+    t.string "bulid_name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
