@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
+  get 'users/index'
   devise_for :users, skip: :all
   devise_scope :user do
     delete 'destroy' => 'devise/sessions#destroy',as: :current_user_destroy
   end
 
-  root 'signup#index'
+  root 'users#index'
 
   resources :signup ,only: [:index, :create] do
     collection do
