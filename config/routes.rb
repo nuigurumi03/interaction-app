@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'posts/new'
   get 'users/index'
   devise_for :users, skip: :all
   devise_for :users, :controllers => {
@@ -11,6 +12,8 @@ Rails.application.routes.draw do
   end
 
   root 'users#index'
+
+  resources :posts ,only: [:new]
 
   resources :signup ,only: [:index, :create] do
     collection do

@@ -66,6 +66,25 @@ header {
         color: #ffffff;
         background: black;
       }
+      &__post {
+        display: inline-block;
+        border-radius: 5%;
+        font-size: 12pt;
+        text-align: center;
+        cursor: pointer;
+        padding: 10px 10px;
+        background: cyan;
+        color: black;
+        line-height: 1em;
+        transition: .3s;
+        box-shadow: 6px 6px 3px #666666;
+        border: 2px solid cyan;
+      }
+      &__post:hover {
+        box-shadow: none;
+        color: cyan;
+        background: black;
+      }
       &__logout {
         display: inline-block;
         border-radius: 5%;

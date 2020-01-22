@@ -1,0 +1,30 @@
+.main
+  %selection.main__block
+    = form_with model:@post, local:true do |f|
+      %h2.post__block__head
+        投稿内容を入力
+      .post__block__form
+        .post__block__form__upload
+          %h3.post__block__form__upload__image
+            画像
+            %span.require 必須
+          %p 最大10枚までアップロードできます
+          #image-box-1
+            .item-num-0#image-box__container
+              = f.fields_for :images do |i|
+                .input-area
+                  = i.file_field :images, type: 'file', name: "post[images_attributes][][image_url]", value:"", style: "display:none", id:"img-file"
+                  %label{for: "img-file"}
+                    %i.fas.fa-camera
+
+        .post__block__form__title
+          .form-group__title
+            %label
+              タイトル
+              %span.require 必須
+            %div
+              = f.text_field :name, placeholder:"タイトル名(必須)"
+
+        .post__block__form__btn
+          %div
+            = f.submit "投稿する", class: "post__block__form__btn__red"

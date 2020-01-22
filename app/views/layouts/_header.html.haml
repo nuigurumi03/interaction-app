@@ -13,6 +13,9 @@
           = link_to current_user_destroy_path, class: "header-list__right__text__mypage", method: :delete do
             マイページ
         %a.header-list__right__text
+          = link_to posts_new_path, class: "header-list__right__text__post" do
+            投稿する
+        %a.header-list__right__text
           = link_to current_user_destroy_path, class: "header-list__right__text__logout", method: :delete do
             ログアウト
             

@@ -2,6 +2,7 @@ class User < ApplicationRecord
   devise   :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable
   
   has_one :profile, dependent: :destroy
+  has_many :posts
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   PASSWORD_VALIDATION = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{7,128}+\z/i
