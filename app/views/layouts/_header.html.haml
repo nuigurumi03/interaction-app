@@ -1,38 +1,41 @@
 %header
-.header__inner
-  .header__inner__top
-    .header__inner__top__logo
-      = link_to root_path, data: {turbolinks: false} do
-        = image_tag '', alt: '', height: '36px', width: '150px', class: 'top-logo'
-    = form_for to_s do |f|
-      = f.search_field :title, placeholder:"何かお探しですか？", id:"field"
+  .header__inner
+    .header__inner__top
+      .header__inner__top__logo
+        = link_to root_path, data: {turbolinks: false} do
+          = image_tag '', alt: '', height: '36px', width: '150px', class: 'top-logo'
 
-    - if user_signed_in?
-      %li.header__inner__nav__right__in-menu
-        = link_to "#", class: "header__inner__nav__right__in-menu__icon" do
-          = icon('far', 'bell fa-lg', class: "icon")
-          %span.header__inner__nav__right__in-menu__icon--title
-            お知らせ
-      %li.header__inner__nav__right__in-menu
-        = link_to "#", class: "header__inner__nav__right__in-menu__icon" do
-          = icon('fas', 'check fa-lg', class: "icon")
-          %span.header__inner__nav__right__in-menu__icon--title
-            やることリスト
-      %li.header__inner__nav__right__in-menu--mypage
-        %span.header__inner__nav__right__in-menu__icon--title
-          マイページ
-          -# ログイン状態
+      - if user_signed_in?
+        .header__list
+          %ul.header__list__right
+            %li.header__list__right__text
+              = link_to "#", class: "header__inner__nav__right__in-menu__icon" do
+                = icon('far', 'bell fa-lg', class: "icon")
+                %span
+                  お知らせ
+            %li.header__list__right__text
+              = link_to "#", class: "header__inner__nav__right__in-menu__icon" do
+                = icon('fas', 'check fa-lg', class: "icon")
+                %span
+                  やることリスト
+            %li.header__list__right__text
+              %span
+                マイページ
+            %li.header__list__right__text
+              = link_to current_user_destroy_path, method: :delete do
+                ログアウト
+                
+                -# ログイン状態
 
-    - else
-      %li.header__inner__nav__right
-        %ul.header__inner__nav__right__out-menu
-          %li.header__inner__nav__right__out-menu
-            = link_to signup_index_path, class: "header__inner__nav__right__out-menu__signup" do
-              新規会員登録
-
-          %li.header__inner__nav__right__out-menu
-            = link_to new_user_session_path, class: "header__inner__nav__right__out-menu__login" do
-              ログイン
-            -# ログアウト状態
+      - else
+        %li.header__inner__nav__right
+          %ul.header__inner__nav__right__out-menu
+            %li.header__inner__nav__right__out-menu
+              = link_to signup_index_path, class: "header__inner__nav__right__out-menu__signup" do
+                新規会員登録
+            %li.header__inner__nav__right__out-menu
+              = link_to new_user_session_path, class: "header__inner__nav__right__out-menu__login" do
+                ログイン
+            -#   -# ログアウト状態
 
 

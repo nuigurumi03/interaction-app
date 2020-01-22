@@ -1,0 +1,8 @@
+.log-in-main
+  .log-in-main-boxes
+    = form_for(:session, url: login_path) do |f|
+      .log-in-main-boxes__register
+        = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス", class: "register-email"
+        = f.password_field :password, autocomplete: "current-password", placeholder: "パスワード", class: "register-pass"
+
+        = f.submit "ログイン", class: "register-btn"
