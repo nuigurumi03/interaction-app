@@ -1,24 +1,33 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##　usersテーブル
+| Column             | Type   | Options     |
+| ------------------ | ------ | ----------- |
+| nickname           | string | null: false |
+| email              | string | null: false |
+| encrypted_password | string |             |
 
-Things you may want to cover:
+## アソシエーション
+- has_one :profile
 
-* Ruby version
 
-* System dependencies
+## profileテーブル
+| Column             | Type    | Options     |
+| ------------------ | ------- | ----------- |
+| user_id            | integer | null: false |
+| birthyear          | integer | null: false |
+| birthmonth         | integer | null: false |
+| birthday           | integer | null: false |
+| family_name        | string  | null: false |
+| personal_name      | string  | null: false |
+| family_name_kana   | string  | null: false |
+| personal_name_kana | string  | null: false |
+| postal_code        | string  |             |
+| prefecture         | string  |             |
+| city               | string  |             |
+| tell               | string  |             |
+| house_code         | string  |             |
+| build_name         | string  |             |
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+##　アソシエーション
+- belongs_to :user
