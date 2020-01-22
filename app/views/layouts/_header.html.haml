@@ -1,34 +1,31 @@
 %header
+  .header-inner
+    .header-inner__logo
+    .header-inner__search
+      = form_for to_s do |f|
+        = f.search_field :title, placeholder:"何かお探しですか？", id:"field"
+        = f.button icon("fa", "search", class:"icon"), class:"btn"
+
   - if user_signed_in?
     .header-list
       .header-list__right
-        .header-list__right__text
-          = link_to "#", class: "header__inner__nav__right__in-menu__icon" do
-            = icon('far', 'bell fa-lg', class: "icon")
-            %span
-              お知らせ
-        .header-list__right__text
-          = link_to "#", class: "header__inner__nav__right__in-menu__icon" do
-            = icon('fas', 'check fa-lg', class: "icon")
-            %span
-              やることリスト
-        .header-list__right__text
-          %span
+        %a.header-list__right__text
+          = link_to current_user_destroy_path, class: "header-list__right__text__mypage", method: :delete do
             マイページ
-        .header-list__right__text
-          = link_to current_user_destroy_path, method: :delete do
+        %a.header-list__right__text
+          = link_to current_user_destroy_path, class: "header-list__right__text__logout", method: :delete do
             ログアウト
             
             -# ログイン状態
 
   - else
-    %li.header__inner__nav__right
-      %ul.header__inner__nav__right__out-menu
-        %li.header__inner__nav__right__out-menu
-          = link_to signup_index_path, class: "header__inner__nav__right__out-menu__signup" do
+    .header-list
+      .header-list__right
+        %a.header-list__right__text
+          = link_to signup_index_path, class: "header-list__right__text__signup" do
             新規会員登録
-        %li.header__inner__nav__right__out-menu
-          = link_to new_user_session_path, class: "header__inner__nav__right__out-menu__login" do
+        %a.header-list__right__text
+          = link_to new_user_session_path, class: "header-list__right__text__login" do
             ログイン
         -#   -# ログアウト状態
 
