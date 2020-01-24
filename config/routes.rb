@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   
   resources :posts 
 
-  root 'users#index'
+  root 'posts#index'
 
 
 end

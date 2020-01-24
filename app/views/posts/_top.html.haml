@@ -1,0 +1,11 @@
+.content
+  .content__main
+    .content__main__text
+      新着一覧
+    .content__main__unit
+      .content__main__unit__image
+      .content__main__unit__title
+        .content
+          - @posts.each do |post|
+            = post.title
+            = image_tag post.images[0].image.to_s
