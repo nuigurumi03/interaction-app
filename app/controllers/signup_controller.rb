@@ -109,7 +109,6 @@ class SignupController < ApplicationController
       password_confirmation: session[:password_confirmation]
     )
     @user.save
-
     @profile = Profile.new(
       user: @user,
       birthyear: session[:birthyear],

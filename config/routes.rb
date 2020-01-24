@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'posts/new'
-  get 'users/index'
   devise_for :users, skip: :all
   devise_for :users, :controllers => {
   :sessions => 'users/sessions'
@@ -10,10 +8,10 @@ Rails.application.routes.draw do
     post 'login' => 'devise/sessions#create'
     delete 'destroy' => 'devise/sessions#destroy',as: :current_user_destroy
   end
-
+  resources :posts ,only: [:new, :create]
   root 'users#index'
 
-  resources :posts ,only: [:new]
+
 
   resources :signup ,only: [:index, :create] do
     collection do
