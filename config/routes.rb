@@ -8,10 +8,6 @@ Rails.application.routes.draw do
     post 'login' => 'devise/sessions#create'
     delete 'destroy' => 'devise/sessions#destroy',as: :current_user_destroy
   end
-  resources :posts ,only: [:new, :create]
-  root 'users#index'
-
-
 
   resources :signup ,only: [:index, :create] do
     collection do
@@ -24,4 +20,10 @@ Rails.application.routes.draw do
       get 'done'
     end
   end
+  
+  resources :posts 
+
+  root 'users#index'
+
+
 end
