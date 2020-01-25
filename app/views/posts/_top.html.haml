@@ -1,11 +1,26 @@
-.content
-  .content__main
-    .content__main__text
-      新着一覧
-    .content__main__unit
-      .content__main__unit__image
-      .content__main__unit__title
-        .content
-          - @posts.each do |post|
-            = post.title
+- if user_signed_in?
+  .content
+    .content__main
+      .content__main__text
+        新着一覧
+      .content__main__unit
+        - @posts.each do |post|
+          .content__main__unit__image
             = image_tag post.images[0].image.to_s
+            %br= post.title
+        = paginate @posts
+- else
+  .cont
+    .cont_principal
+      .cont_text_img
+        .cont_img_back
+          %img.img_1{:alt => "", :src => "/assets/silhouette.jpg"}/
+          %img.img_2{:alt => "", :src => "/assets/family.jpg"}/
+        .cont_text
+          %h1 Interaction
+          %p 地方では、中小企業の休廃業・解散が相次げば、それが地域の経済や雇用に多大な影響を及ぼす可能性も考えられています。こうした事情から、事業承継や後継者問題は社会問題として広く認知されるようになりました。
+          %p 当サイトではこうした事業継承の手助けができればと思っております。
+        .cont_img_frond
+          %img.img_1{:alt => "", :src => "/assets/silhouette.jpg"}/
+          %img.img_2{:alt => "", :src => "/assets/family.jpg"}/
+        
