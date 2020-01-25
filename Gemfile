@@ -70,3 +70,4 @@ gem 'pry-rails'
 gem "jquery-rails"
 gem 'active_hash'
 gem 'dotenv-rails'
+gem 'kaminari', '~> 0.17.0'
