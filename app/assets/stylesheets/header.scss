@@ -1,32 +1,41 @@
 header {
-  height: 100px;
+  height: 80px;
   width: 100vw;
-  background-color: sienna;
+  background-color: lightblue;
   position: fixed;
   z-index: 1;
+  opacity: 0.8;
   .header-inner {
+    position: relative;
+    &__logo {
+      font-family: fantasy;
+      font-size: 40px;
+      padding: 20px;
+    }
     &__search {
       form {
-        height: 40px;
         width: 100%;
         border-radius: 5px;
         display: flex;
         position: relative;
+        position: absolute;
+        top: 5px;
+        left: 50px;
         #field {
           height: 40px;
-          width: 800px;
+          width: 600px;
           background-color: #EEEEEE;
           border-radius: 5px;
           padding-right: 40px;
           padding-left: 10px;
           position: absolute;
           margin-top: 20px;
-          right: 430px;
+          right: 450px;
         }
         .btn {
           position: absolute;
           top: 25px;
-          right: 430px;
+          right: 455px;
           background-color: #EEEEEE;
           height: 30px;
           width: 40px;
@@ -41,115 +50,23 @@ header {
 }
 
 .header-list {
+  position: relative;
   &__right {
     display: flex;
     float: right;
-    padding-right: 20px;
-    &__text {
-      padding-right: 20px;
-      padding-top: 10px;
-      &__mypage {
-        display: inline-block;
-        border-radius: 5%;
-        font-size: 12pt;
-        text-align: center;
-        cursor: pointer;
-        padding: 10px 10px;
-        background: #ffffff;
-        color: black;
-        line-height: 1em;
-        transition: .3s;
-        box-shadow: 6px 6px 3px #666666;
-        border: 2px solid #ffffff;
-      }
-      &__mypage:hover {
-        box-shadow: none;
-        color: #ffffff;
-        background: black;
-      }
-      &__post {
-        display: inline-block;
-        border-radius: 5%;
-        font-size: 12pt;
-        text-align: center;
-        cursor: pointer;
-        padding: 10px 10px;
-        background: cyan;
-        color: black;
-        line-height: 1em;
-        transition: .3s;
-        box-shadow: 6px 6px 3px #666666;
-        border: 2px solid cyan;
-      }
-      &__post:hover {
-        box-shadow: none;
-        color: cyan;
-        background: black;
-      }
-      &__logout {
-        display: inline-block;
-        border-radius: 5%;
-        font-size: 12pt;
-        text-align: center;
-        cursor: pointer;
-        padding: 10px 10px;
-        background: #990000;
-        color: #ffffff;
-        line-height: 1em;
-        transition: .3s;
-        box-shadow: 6px 6px 3px #666666;
-        border: 2px solid #990000;
-      }
-      &__logout:hover {
-        box-shadow: none;
-        color: #990000;
-        background: #ffffff;
-      }
-      &__signup {
-        display: inline-block;
-        border-radius: 5%;
-        font-size: 12pt;
-        text-align: center;
-        cursor: pointer;
-        padding: 10px 10px;
-        background: #990000;
-        color: #ffffff;
-        line-height: 1em;
-        transition: .3s;
-        box-shadow: 6px 6px 3px #666666;
-        border: 2px solid #990000;
-      }
-      &__signup:hover {
-        box-shadow: none;
-        color: #990000;
-        background: #ffffff;
-      }
-      &__login {
-        display: inline-block;
-        border-radius: 5%;
-        font-size: 12pt;
-        text-align: center;
-        cursor: pointer;
-        padding: 10px 10px;
-        background: #ffffff;
-        color: black;
-        line-height: 1em;
-        transition: .3s;
-        box-shadow: 6px 6px 3px #666666;
-        border: 2px solid #ffffff;
-      }
-      &__login:hover {
-        box-shadow: none;
-        color: #ffffff;
-        background: black;
-      }
-    }
+    position: absolute;
+    right: 20px;
+    bottom: 10px;
   }
 }
+
 
 a {
   text-decoration: none;
 }
 
+.cont {
+  overflow: hidden;
+}
 
 

@@ -1,35 +1,42 @@
 %header
-  .header-inner
-    .header-inner__logo
-    .header-inner__search
-      = form_for to_s do |f|
-        = f.search_field :title, placeholder:"何かお探しですか？", id:"field"
-        = f.button icon("fa", "search", class:"icon"), class:"btn"
-
   - if user_signed_in?
+    .header-inner
+      .header-inner__logo
+        Interaction
+      .header-inner__search
+        = form_for to_s do |f|
+          = f.search_field :title, placeholder:"何かお探しですか？", id:"field"
+          = f.button icon("fa", "search", class:"icon"), class:"btn"
     .header-list
       .header-list__right
-        %a.header-list__right__text
-          = link_to current_user_destroy_path, class: "header-list__right__text__mypage", method: :delete do
-            マイページ
-        %a.header-list__right__text
-          = link_to new_post_path, class: "header-list__right__text__post" do
-            投稿する
-        %a.header-list__right__text
-          = link_to current_user_destroy_path, class: "header-list__right__text__logout", method: :delete do
-            ログアウト
+        .container
+          %a.bnt-massage{:href => "/signup"}
+            Mypage
+            %span マイページ
+          %a.bnt-massage{:href => "/posts/new"}
+            Post
+            %span 投稿する
+          = link_to current_user_destroy_path, class: "bnt-massage", method: :delete do
+            Logout
+            %span ログアウト
             
             -# ログイン状態
 
   - else
-    .header-list
-      .header-list__right
-        %a.header-list__right__text
-          = link_to signup_index_path, class: "header-list__right__text__signup" do
-            新規会員登録
-        %a.header-list__right__text
-          = link_to new_user_session_path, class: "header-list__right__text__login" do
-            ログイン
-        -#   -# ログアウト状態
+    .header-inner
+      .header-inner__logo
+        Interaction
+      .header-list
+        .header-list__right
+          .container
+          %a.bnt-massage{:href => "/signup"}
+            Signup
+            %span 新規会員登録
+
+          .container
+          %a.bnt-massage{:href => "/users/sign_in"}
+            Login
+            %span ログイン
+          -#   -# ログアウト状態
 
 
