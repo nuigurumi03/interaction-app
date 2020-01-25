@@ -1,9 +1,9 @@
 class PostsController < ApplicationController
-  PER = 2
+  PER = 6
 
   def index
     @posts = Post.includes(:images).order('created_at DESC')
-    @posts = Post.page(params[:page]).per(2).order('created_at DESC')
+    @posts = Post.page(params[:page]).per(6).order('created_at DESC')
     
   end
 

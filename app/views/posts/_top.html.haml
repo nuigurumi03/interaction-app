@@ -1,13 +1,29 @@
-.content
-  .content__main
-    .content__main__text
-      新着一覧
-    .content__main__unit
-      - @posts.each do |post|
-        .content__main__unit__image
-          = image_tag post.images[0].image.to_s
-          %br= post.title
-      = paginate @posts
+- if user_signed_in?
+  .content
+    .content__main
+      .content__main__text
+        新着一覧
+      .content__main__unit
+        - @posts.each do |post|
+          .content__main__unit__image
+            = image_tag post.images[0].image.to_s
+            %br= post.title
+        = paginate @posts
+- else
+  .cont_principal
+    .cont_text_img
+      .cont_img_back
+        %img.img_1{:alt => "", :src => "http://i0.wp.com/farm1.staticflickr.com/417/19827417914_da1c83bbe6_b.jpg?w=1060"}/
+        %img.img_2{:alt => "", :src => "http://i1.wp.com/farm1.staticflickr.com/530/19829170113_2b312c3ced_b.jpg?w=1060"}/
+      .cont_text
+        %h1 San Francisco
+        %p San Francisco, officially the City and County of San Francisco, is the cultural, commercial, and financial center of Northern California and the only consolidated city-county in California. San Francisco encompasses a land area of about 46.9 square miles (121 km2) on the northern end of the San Francisco Peninsula, which makes it the smallest county in the state.
+        %button.btn_read_m READ MORE
+        .cont_icon_like
+          %p
+            %i.material-icons 
+            %span 288
+      .cont_img_frond
+        %img.img_1{:alt => "", :src => "http://i0.wp.com/farm1.staticflickr.com/417/19827417914_da1c83bbe6_b.jpg?w=1060"}/
+        %img.img_2{:alt => "", :src => "http://i1.wp.com/farm1.staticflickr.com/530/19829170113_2b312c3ced_b.jpg?w=1060"}/
         
-        
-          
