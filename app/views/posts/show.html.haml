@@ -1,0 +1,39 @@
+.main
+  %selection.main__block
+    %h2.post-block
+      = @posts.title
+    .post-form
+      .post-form__upload
+        %h3.post-form__upload__image
+          画像
+          
+
+      .post-form__title
+        %h3.post-form__title__text
+          詳しい内容
+          %span.require 必須
+        %br
+
+      .post-form__title
+        %h3.post-form__title__text
+          都道府県
+          %span.require 必須
+        %br
+
+      .post-form__title
+        %h3.post-form__title__text
+          市区町村
+          %span.require 必須
+        %br
+
+      .post-form__title
+        %h3.post-form__title__text
+          番地
+          %span
+        %br
+
+      .post-form__title
+        %h3.post-form__title__text
+          建物名
+          %span
+        %br

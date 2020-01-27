@@ -4,7 +4,6 @@ class PostsController < ApplicationController
   def index
     @posts = Post.includes(:images).order('created_at DESC')
     @posts = Post.page(params[:page]).per(6).order('created_at DESC')
-    
   end
 
   def new
@@ -19,6 +18,10 @@ class PostsController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  def show
+    @posts = Post.find(params[:id])
   end
 
   private
