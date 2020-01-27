@@ -6,34 +6,29 @@
       .post-form__upload
         %h3.post-form__upload__image
           画像
-          
+          = image_tag @image.image.to_s
 
       .post-form__title
         %h3.post-form__title__text
           詳しい内容
-          %span.require 必須
-        %br
+          = @posts.detail
 
       .post-form__title
         %h3.post-form__title__text
           都道府県
-          %span.require 必須
-        %br
+          = @posts.prefecture
 
       .post-form__title
         %h3.post-form__title__text
           市区町村
-          %span.require 必須
-        %br
+          = @posts.city
 
       .post-form__title
         %h3.post-form__title__text
           番地
-          %span
-        %br
+          = @posts.house_code
 
       .post-form__title
         %h3.post-form__title__text
           建物名
-          %span
-        %br
+          = @posts.build_name
