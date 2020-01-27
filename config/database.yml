@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: interaction-app_production
-  username: interaction-app
-  password: <%= ENV['INTERACTION-APP_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
