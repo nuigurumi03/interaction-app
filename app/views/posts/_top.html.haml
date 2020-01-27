@@ -2,12 +2,13 @@
   .content
     .content__main
       .content__main__text
-        新着一覧
+        = @posts.title
       .content__main__unit
         - @posts.each do |post|
           .content__main__unit__image
-            = image_tag post.images[0].image.to_s
-            %br= post.title
+            = link_to post_path(post.id) do
+              = image_tag post.images[0].image.to_s
+              %br= post.title
         = paginate @posts
 - else
   .cont
