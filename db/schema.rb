@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_22_083512) do
+ActiveRecord::Schema.define(version: 2020_01_28_003951) do
+
+  create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "prefecture_id"
+    t.string "city"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "image", null: false
@@ -23,7 +30,7 @@ ActiveRecord::Schema.define(version: 2020_01_22_083512) do
     t.integer "user_id"
     t.string "title", null: false
     t.text "detail", null: false
-    t.string "prefecture", null: false
+    t.integer "prefecture_id", null: false
     t.string "city", null: false
     t.string "house_code"
     t.string "build_name"
@@ -41,7 +48,7 @@ ActiveRecord::Schema.define(version: 2020_01_22_083512) do
     t.string "family_name_kana", null: false
     t.string "personal_name_kana", null: false
     t.string "postal_code", null: false
-    t.string "prefecture", null: false
+    t.integer "prefecture_id", null: false
     t.string "city", null: false
     t.string "tel", null: false
     t.string "house_code", null: false

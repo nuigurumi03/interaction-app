@@ -37,7 +37,7 @@ class SignupController < ApplicationController
       personal_name: session[:personal_name],
       family_name_kana: session[:family_name_kana],
       personal_name_kana: session[:personal_name_kana],
-      prefecture: '沖縄',
+      prefecture_id: '1',
       city: '那覇市',
       postal_code: '888-8888',
       tel: '090-1234-5678',
@@ -75,7 +75,7 @@ class SignupController < ApplicationController
       personal_name: session[:personal_name],
       family_name_kana: session[:family_name_kana],
       personal_name_kana: session[:personal_name_kana],
-      prefecture: '沖縄',
+      prefecture_id: '1',
       city: '那覇市',
       postal_code: '888-8888',
       tel: session[:tel],
@@ -98,7 +98,7 @@ class SignupController < ApplicationController
 
   def second_validation
     session[:postal_code] = profile_params[:postal_code]
-    session[:prefecture] = profile_params[:prefecture]
+    session[:prefecture_id] = profile_params[:prefecture_id]
     session[:city] = profile_params[:city]
     session[:house_code] = profile_params[:house_code]
     session[:bulid_name] = profile_params[:bulid_name]
@@ -118,7 +118,7 @@ class SignupController < ApplicationController
       personal_name: session[:personal_name],
       family_name_kana: session[:family_name_kana],
       personal_name_kana: session[:personal_name_kana],
-      prefecture: session[:prefecture],
+      prefecture_id: session[:prefecture_id],
       city: session[:city],
       postal_code: session[:postal_code],
       tel: session[:tel],
@@ -151,7 +151,7 @@ class SignupController < ApplicationController
   end
 
   def profile_params
-    params.require(:profile).permit(:birthyear,:birthmonth,:birthday,:family_name,:personal_name,:family_name_kana,:personal_name_kana,:postal_code,:prefecture,:city,:tel,:house_code,:bulid_name)
+    params.require(:profile).permit(:birthyear,:birthmonth,:birthday,:family_name,:personal_name,:family_name_kana,:personal_name_kana,:postal_code,:prefecture_id,:city,:tel,:house_code,:bulid_name)
   end
 
   def redirect_to_index_from_sms
