@@ -1,0 +1,13 @@
+.messages
+  .message__upper
+    .message__upper__name
+      テストユーザー
+    .message__upper__day
+      2019/1/28
+  .message__lower
+    内容
+
+  .submit
+    = form_for @message do |f|
+      = f.text_field :text
+      = f.submit "Send"

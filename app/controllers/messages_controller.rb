@@ -2,6 +2,7 @@ class MessagesController < ApplicationController
 
   def new
     @message = Message.new
+    # @messages = @post.messages.includes(:user_id)
   end
   
   def create
