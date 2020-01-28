@@ -8,17 +8,18 @@ body {
   margin:0;
 }
 
+// 投稿画面
+
 .main {
   background-color: skyblue;
   padding-top: 40px;
-  padding-bottom: 40px;
+  height: 90vw;
   &__block {
     width: 690px;
     margin: 0 auto;
     display: block;
     background-color: mediumturquoise;
     opacity: 0.8;
-    padding-bottom: 40px;
     .post-block {
       padding: 32px 16px;
       font-size: 22px;
@@ -162,4 +163,34 @@ pre {
   font-size: 14px;
   background-color: black;
   color: white;
+}
+
+// 投稿詳細画面
+
+.main-show {
+  width: 690px;
+  margin: 0 auto;
+  display: block;
+  background-color: mediumturquoise;
+  opacity: 0.8;
+  padding-bottom: 40px;
+  text-align: center;
+  .post-show {
+    padding: 32px 16px;
+    font-size: 22px;
+    display: block;
+    text-align: center;
+    font-weight: bold;
+  }
+}
+
+.show-form__title {
+  padding-top: 20px;
+  padding-left: 40px;
+  text-align: left;
+  &__text {
+    font-size: 16px;
+    font-weight: bold;
+    
+  }
 }
