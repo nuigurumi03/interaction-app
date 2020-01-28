@@ -1,34 +1,44 @@
 .main
-  %selection.main__block
-    %h2.post-block
+  %selection.main-show
+    %h2.post-show
       = @posts.title
-    .post-form
-      .post-form__upload
-        %h3.post-form__upload__image
-          画像
-          = image_tag @image.image.to_s
+    .show-form
+      .show-form__upload
+        = image_tag @image.image.to_s
 
-      .post-form__title
-        %h3.post-form__title__text
+      .show-form__title
+        .show-form__title__text 
           詳しい内容
-          = @posts.detail
+        .show-form__title__detail
+        = @posts.detail
 
-      .post-form__title
-        %h3.post-form__title__text
+      .show-form__title
+        .show-form__title__text 
           都道府県
-          = @posts.prefecture
+        .show-form__title__prefecture
+          = @posts.prefecture.name
 
-      .post-form__title
-        %h3.post-form__title__text
+      .show-form__title
+        .show-form__title__text
           市区町村
+        .show-form__title__city
           = @posts.city
 
-      .post-form__title
-        %h3.post-form__title__text
+      .show-form__title
+        .show-form__title__text
           番地
+        .show-form__title__house
           = @posts.house_code
 
-      .post-form__title
-        %h3.post-form__title__text
+      .show-form__title
+        .show-form__title__text
           建物名
+        .show-form__title__build
           = @posts.build_name
+
+      .show-form__title
+        .show-form__title__text
+          メッセージを送る
+        .show-form__title__message
+          .show-form__title__message__submit
+
