@@ -1,6 +1,6 @@
 ## README
 
-##　usersテーブル
+## usersテーブル
 | Column             | Type   | Options     |
 | ------------------ | ------ | ----------- |
 | nickname           | string | null: false |
