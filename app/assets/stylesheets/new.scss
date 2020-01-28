@@ -12,8 +12,9 @@ body {
 
 .main {
   background-color: skyblue;
-  padding-top: 40px;
-  height: 100vw;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  height: calc(100vw-40px);
   &__block {
     width: 690px;
     margin: 0 auto;
