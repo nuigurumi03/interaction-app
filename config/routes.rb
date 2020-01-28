@@ -21,9 +21,8 @@ Rails.application.routes.draw do
     end
   end
   
-  resources :posts do
-    resources :messages
-  end
+  resources :posts 
+  resources :messages
 
   root 'posts#index'
 
