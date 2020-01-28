@@ -13,7 +13,7 @@ body {
 .main {
   background-color: skyblue;
   padding-top: 40px;
-  height: 90vw;
+  height: 100vw;
   &__block {
     width: 690px;
     margin: 0 auto;
@@ -187,10 +187,18 @@ pre {
 .show-form__title {
   padding-top: 20px;
   padding-left: 40px;
+  padding-right: 40px;
   text-align: left;
   &__text {
     font-size: 16px;
     font-weight: bold;
-    
   }
+}
+
+.show-form__title__message {
+  margin-top: 20px;
+  width: 610px;
+  height: 650px;
+  background-color: white;
+  border: solid #ccc;
 }
