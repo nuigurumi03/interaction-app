@@ -25,6 +25,8 @@ class PostsController < ApplicationController
     @image = Image.find(params[:id])
   end
 
+  
+
   private
   
   def post_params
