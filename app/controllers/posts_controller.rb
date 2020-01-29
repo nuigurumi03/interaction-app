@@ -23,6 +23,7 @@ class PostsController < ApplicationController
   def show
     @posts = Post.find(params[:id])
     @image = Image.find(params[:id])
+    # @messages = @post.messages.includes(:user_id)
   end
 
   
