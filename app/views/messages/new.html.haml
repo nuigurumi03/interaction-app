@@ -1,13 +1,27 @@
-.messages
-  .message__upper
-    .message__upper__name
-      テストユーザー
-    .message__upper__day
-      2019/1/28
-  .message__lower
-    内容
-
-  .submit
-    = form_for @message do |f|
-      = f.text_field :text
-      = f.submit "Send"
+.messages-main
+  .messages-main__wrapper
+    .messages
+      .message
+        .message__upper
+          .message__upper__name
+            テストユーザー
+          .message__upper__day
+            2019/1/28
+        .message__lower
+          内容
+      .message
+        .message__upper
+          .message__upper__name
+            テストユーザー
+          .message__upper__day
+            2019/1/28
+        .message__lower
+          内容
+    .submit
+      = form_for @message do |f|
+        .submit__input
+          = f.text_field :text, class: "submit__input__text", placeholder: 'type a message'
+          = f.label :image, class: "submit__input__file" do
+            = icon('far', 'image', class: 'submit__input__file__icon')
+            = f.file_field :image, class: 'hidden'
+          = f.submit "Send", class: "submit__input__send"
