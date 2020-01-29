@@ -20,11 +20,12 @@ Rails.application.routes.draw do
       get 'done'
     end
   end
-  
-  resources :posts 
-  resources :messages
 
   root 'posts#index'
+
+  resources :posts do
+    resources :messages, only: [:new, :create]
+  end
 
 
 end
