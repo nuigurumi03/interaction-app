@@ -21,7 +21,5 @@
       = form_for @message, url: new_post_message_path do |f|
         .submit__input
           = f.text_field :text, class: "submit__input__text", placeholder: 'type a message'
-          = f.label :image, class: "submit__input__file" do
-            = icon('far', 'image', class: 'submit__input__file__icon')
-            = f.file_field :image, class: 'hidden'
-          = f.submit "Send", class: "submit__input__send"
+          = f.label :image, class: "submit__input__file" 
+          = f.submit "Send", method: post, class: "submit__input__send"
